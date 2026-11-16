@@ -1,11 +1,10 @@
 [project]
 name = "e-commerce"
 version = "0.1.0"
-description = ""
+description = "Учебный проект e-commerce"
 authors = [
     {name = "Dindus", email = "feniball79@gmail.com"}
-          ]
-
+]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -13,23 +12,14 @@ dependencies = [
     "python-dotenv (>=1.2.3,<2.0.0)",
     "pandas (>=3.0.6,<4.0.0)",
     "openpyxl (>=3.1.5,<4.0.0)",
-    "poetry-core (>=2.5.0,<3.0.0)",
-               ]
-
+]
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-requests = "^2.34.2"
-python-dotenv = "^1.2.3"
-pandas = "^3.0.6"
-openpyxl = "^3.1.5"
-
 [tool.poetry]
-package-mode = false
+packages = [{include = "ecommerce", from = "src"}]
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.3.0"
@@ -41,6 +31,7 @@ isort = "^8.0.1"
 pytest-cov = "^7.1.0"
 pytest = "^9.1.1"
 pytest-mock = "^3.16.0"
+
 
 [tool.mypy]
 python_version = "3.12"

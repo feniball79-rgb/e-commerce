@@ -1035,18 +1035,6 @@ files = [
 ]
 
 [[package]]
-name = "poetry-core"
-version = "2.5.0"
-description = "Poetry PEP 517 Build Backend"
-optional = false
-python-versions = "<4.0,>=3.10"
-groups = ["main"]
-files = [
-    {file = "poetry_core-2.5.0-py3-none-any.whl", hash = "sha256:98ee465b66f7e14bb9fbe68fb5e00d0cff184f036993ec94610ae4b5612f3add"},
-    {file = "poetry_core-2.5.0.tar.gz", hash = "sha256:81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"},
-]
-
-[[package]]
 name = "pycodestyle"
 version = "2.15.0"
 description = "Python style guide checker"
@@ -1296,5 +1284,5 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.12"
-content-hash = "11a475908312ddf2df83ee6bee098a42746184b0896549f66401664914007e50"
+python-versions = ">=3.12"
+content-hash = "24e49a385e43cb8120c7ca8a6f95688b9c513fcf4eccc4b042d4a7e00f9c966f"
