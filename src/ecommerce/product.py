@@ -4,3 +4,11 @@ class Product:
         self.description = description
         self.price = price
         self.quantity = quantity
+
+
+# if __name__ == "__main__":
+#     prod = Product("Smartphone", "Samsung Galaxy S28", 1000.00, 5)
+#     print(prod.name)
+#     print(prod.description)
+#     print(prod.price)
+#     print(prod.quantity)
