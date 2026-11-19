@@ -222,3 +222,5 @@ tempCodeRunnerFile.py
 
 logs/
 .flake8
+
+data/
