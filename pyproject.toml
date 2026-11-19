@@ -54,7 +54,7 @@ follow_imports = "skip"
 [tool.isort]
 profile = "black"
 src_paths = ["src"]
-skip = [".idea", ".mypy_cache", ".pytest_cache", "htmlcov", "logs", "data"]
+skip = [".venv", "venv", ".idea", ".mypy_cache", ".pytest_cache", "htmlcov", "logs", "data"]
 
 [tool.black]
 line-length = 119
