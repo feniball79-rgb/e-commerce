@@ -1,5 +1,3 @@
-from typing import Optional
-
 from ecommerce.product import Product
 
 
@@ -11,10 +9,45 @@ class Category:
         self,
         name: str | None = None,
         description: str | None = None,
-        products: Optional[list["Product"]] | None = None,
-    ):
+        products: list["Product"] | None = None,
+    ) -> None:
         self.name = name
         self.description = description
-        self.products = products if products is not None else []
+        self.__products = products if products is not None else []
         Category.category_count += 1
-        Category.product_count += len(self.products)
+        Category.product_count += len(self.__products)
+
+    @property
+    def products(self) -> str:
+        products_str = ""
+        for prod in self.__products:
+            products_str += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт.\n"
+        return products_str
+
+    def add_product(self, new_product: "Product") -> None:
+        self.__products.append(new_product)
+        Category.product_count += 1
+
+
+# if __name__ == "__main__":
+#
+#     # проверка совместной работы классов Product и Category
+#     prd = Product("Cubic-Rubik", "brain-braker", 10.23, 5)
+#     ddd = Category("Cubix","games", [prd])
+#     print(ddd.products)
+#
+#     # вторая проверка совместной работы классов Product и Category
+#     prd2 = Product("Ball", "football", 30.55, 50)
+#     ddd2 = Category("Sport", "team games", [prd2])
+#     print(ddd2.products)
+#
+#     print(ddd2.product_count)    # счётчик 1
+#     print(ddd2.category_count)   # счётчик 2
+#
+#     # проверка работы метода add_product
+#     prd2 = Product("Triangle", "billiard", 10.44, 4)
+#     ddd2.add_product(prd2)
+#     print(ddd2.products)
+#
+#     print(ddd2.product_count)  # счётчики
+#     print(ddd2.category_count)
