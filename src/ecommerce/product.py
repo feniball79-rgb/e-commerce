@@ -34,19 +34,36 @@ class Product:
         else:
             self.__price = new_price
 
+    def __str__(self) -> str:
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other: "Product") -> float | Any:
+        sum_price = self.price * self.quantity
+        sum_quant = other.price * other.quantity
+        res = sum_price + sum_quant
+        return res
+
 
 # if __name__ == "__main__":
 #
-#     aaa = {'name':'otto', 'description':'burger', 'price':0.0, 'quantity':1}
+#     aaa = {"name": "otto", "description": "burger", "price": 10, "quantity": 11}
+#     bbb = {"name": "baltika", "description": "beer", "price": 20, "quantity": 22}
+#
 #     fff = Product.new_product(aaa)
+#     ooo = Product.new_product(bbb)
 #
 #     print()
-#     print(fff)
 #     print(fff.name)
 #     print(fff.description)
 #     print(fff.price)
 #     print(fff.quantity)
-# ## ********************************************************
+#     print()
+#     print(fff)
+#     print(ooo)
+#     print()
+#     print(fff + ooo)
+#
+#     ## ********************************************************
 #
 #     # проверка @price.setter
 #     print()
@@ -54,3 +71,5 @@ class Product:
 #     print(fff.price)
 #     fff.quantity = 8
 #     print(fff.quantity)
+#
+#     # *********************************************
