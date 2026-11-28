@@ -54,3 +54,13 @@ def test_add_product(category_fxt):
 
     assert Category.product_count == prod_before + 4  # было 3, стало 4
     assert "Наушники, 15000.0 руб. Остаток: 7 шт." in category_fxt.products
+
+
+def test_category_str(category_fxt):
+    """__str__ показывает сумму количеств всех товаров категории"""
+    assert str(category_fxt) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_products_getter_uses_product_str(category_fxt):
+    lines = category_fxt.products.strip().split("\n")
+    assert lines[0] == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."

@@ -64,3 +64,15 @@ def test_new_product_creates_instance():
     assert p.price == 10999.99
     assert p.quantity == 47
     assert isinstance(p, Product)
+
+
+def test_product_str(product_fixt_3):
+    """__str__ возвращает строку формата задания"""
+    assert str(product_fixt_3) == "otto, 10999.99 руб. Остаток: 47 шт."
+
+
+def test_add_products():
+    """__add__ возвращает сумму произведений цены на количество"""
+    a = Product("яблоки", "красные", 100.0, 10)
+    b = Product("бананы", "жёлтые", 200.0, 2)
+    assert a + b == 100 * 10 + 200 * 2  # 1400
